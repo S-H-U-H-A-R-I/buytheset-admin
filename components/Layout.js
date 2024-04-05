@@ -3,7 +3,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Nav from "@/components/Nav";
 import { useState } from "react";
 
-const Home = () => {
+const Layout = ({ children }) => {
   const { data: session } = useSession();
   const [isLoading, setIsLoading] = useState(false);
   if (!session) {
@@ -33,10 +33,10 @@ const Home = () => {
           !session ? "opacity-0" : "opacity-100"
         }`}
       >
-        logged in as {session.user.email}
+        {children}
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Layout;
