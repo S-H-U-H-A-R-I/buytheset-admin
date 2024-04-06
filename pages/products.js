@@ -4,7 +4,7 @@ import Link  from "next/link";
 const Products = () => {
   return (
     <Layout>
-      <Link className="bg-blue-600 text-white rounded-md py-2 px-4" href={'/products/new'}>Add new product</Link>
+      <Link className="btn-primary" href={'/products/new'}>Add new product</Link>
     </Layout>
   );
 };
